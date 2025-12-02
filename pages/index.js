@@ -62,7 +62,8 @@ export default function Home() {
               techIcons={[
                 { src: '/images/excel.jpg', label: 'Excel' }
               ]}
-              link="https://drive.google.com/drive/folders/1uLYHniJfvrdoWd5NXMsbgfsvkM32ZfnR?usp=sharing"
+              link="#" // placeholder link
+            // link="https://drive.google.com/drive/folders/1uLYHniJfvrdoWd5NXMsbgfsvkM32ZfnR?usp=sharing"
             />
           </div>
         </section>
