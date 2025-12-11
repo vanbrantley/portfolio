@@ -43,7 +43,7 @@ export default function Home() {
               ]}
               link="#" // placeholder link
             />
-            <ProjectCard
+            {/* <ProjectCard
               title="NYC Rent Explorer"
               description="Interactive map-based dashboard designed to make New York City rent data easy to explore and analyze."
               image="/images/rent-icon.png"
@@ -54,7 +54,7 @@ export default function Home() {
                 { src: '/images/streamlit.png', label: 'Streamlit' },
               ]}
               link="https://nyc-rent-explorer.streamlit.app/"
-            />
+            /> */}
             <ProjectCard
               title="Personal Finance Dashboard"
               description="Excel template designed to help you take control of your finances with clarity and insight."
