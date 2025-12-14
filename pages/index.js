@@ -41,7 +41,7 @@ export default function Home() {
                   { src: '/images/aws.png', label: 'AWS' },
                   { src: '/images/python.webp', label: 'Python' },
                   { src: '/images/postgresql.png', label: 'PostreSQL' },
-                  { src: '/images/ga4-2.png', label: 'Google Analytics 4' },
+                  { src: '/images/ga4.jpg', label: 'Google Analytics 4' },
                   { src: '/images/shopify.webp', label: 'Shopify' },
                 ]}
               />
