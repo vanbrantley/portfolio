@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from "next/link";
 import Layout from '@/components/Layout';
-import Navbar from '@/components/Navbar';
 import ProjectCard from '@/components/ProjectCard';
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
       <Head>
         <title>Van Brantley | Data Analyst</title>
       </Head>
-      {/* <Navbar /> */}
       <main className="p-6">
         <section className="h-screen flex flex-col items-center justify-center text-center bg-white transition-colors duration-300">
           <h1 className="text-4xl font-bold mb-4 text-gray-900">Van Brantley</h1>
@@ -40,9 +38,11 @@ export default function Home() {
                 description="Business intelligence dashboard that tracks sales, customer trends, and product performance for a simulated clothing e-commerce store."
                 image="/images/streetwear-icon.png"
                 techIcons={[
-                  { src: '/images/sql.webp', label: 'SQL' },
-                  { src: '/images/powerbi.webp', label: 'Power BI' },
-                  { src: '/images/aws.png', label: 'AWS' }
+                  { src: '/images/aws.png', label: 'AWS' },
+                  { src: '/images/python.webp', label: 'Python' },
+                  { src: '/images/postgresql.png', label: 'PostreSQL' },
+                  { src: '/images/ga4-2.png', label: 'Google Analytics 4' },
+                  { src: '/images/shopify.webp', label: 'Shopify' },
                 ]}
               />
             </Link>
@@ -52,7 +52,10 @@ export default function Home() {
                 description="Excel template designed to help you take control of your finances with clarity and insight."
                 image="/images/budget-icon.png"
                 techIcons={[
-                  { src: '/images/excel.jpg', label: 'Excel' }
+                  { src: '/images/sheets.png', label: 'Google Sheets' },
+                  { src: '/images/bigquery.png', label: 'Google BigQuery' },
+                  { src: '/images/colab.webp', label: 'Google Colab' },
+                  { src: '/images/python.webp', label: 'Python' },
                 ]}
               />
             </Link>
@@ -62,7 +65,10 @@ export default function Home() {
                 description="Excel template designed to help you take control of your finances with clarity and insight."
                 image="/images/bobcat.jpg"
                 techIcons={[
-                  { src: '/images/excel.jpg', label: 'Excel' }
+                  { src: '/images/drive.png', label: 'Google Drive' },
+                  { src: '/images/forms.webp', label: 'Google Forms' },
+                  { src: '/images/sheets.png', label: 'Google Sheets' },
+                  { src: '/images/looker.png', label: 'Looker Studio' },
                 ]}
               />
             </Link>
