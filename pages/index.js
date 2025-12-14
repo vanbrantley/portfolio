@@ -1,14 +1,16 @@
 import Head from 'next/head';
+import Link from "next/link";
+import Layout from '@/components/Layout';
 import Navbar from '@/components/Navbar';
 import ProjectCard from '@/components/ProjectCard';
 
 export default function Home() {
   return (
-    <>
+    <Layout>
       <Head>
         <title>Van Brantley | Data Analyst</title>
       </Head>
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="p-6">
         <section className="h-screen flex flex-col items-center justify-center text-center bg-white transition-colors duration-300">
           <h1 className="text-4xl font-bold mb-4 text-gray-900">Van Brantley</h1>
@@ -31,43 +33,42 @@ export default function Home() {
 
         <section id="projects" className="py-16">
           <h2 className="text-2xl font-bold mb-8 text-center text-gray-900">Projects</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <ProjectCard
-              title="Streetwear Analytics Dashboard"
-              description="Business intelligence dashboard that tracks sales, customer trends, and product performance for a simulated clothing e-commerce store."
-              image="/images/streetwear-icon.png"
-              techIcons={[
-                { src: '/images/sql.webp', label: 'SQL' },
-                { src: '/images/powerbi.webp', label: 'Power BI' },
-                { src: '/images/aws.png', label: 'AWS' }
-              ]}
-              link="#" // placeholder link
-            />
-            {/* <ProjectCard
-              title="NYC Rent Explorer"
-              description="Interactive map-based dashboard designed to make New York City rent data easy to explore and analyze."
-              image="/images/rent-icon.png"
-              techIcons={[
-                { src: '/images/python.webp', label: 'Python' },
-                { src: '/images/pandas.png', label: 'Pandas' },
-                { src: '/images/jupyter.png', label: 'Jupyter' },
-                { src: '/images/streamlit.png', label: 'Streamlit' },
-              ]}
-              link="https://nyc-rent-explorer.streamlit.app/"
-            /> */}
-            <ProjectCard
-              title="Personal Finance Dashboard"
-              description="Excel template designed to help you take control of your finances with clarity and insight."
-              image="/images/budget-icon.png"
-              techIcons={[
-                { src: '/images/excel.jpg', label: 'Excel' }
-              ]}
-              link="#" // placeholder link
-            // link="https://drive.google.com/drive/folders/1uLYHniJfvrdoWd5NXMsbgfsvkM32ZfnR?usp=sharing"
-            />
+          <div className="grid gap-6 md:grid-cols-2 items-stretch">
+            <Link href="/projects/clothing-brand">
+              <ProjectCard
+                title="Streetwear Analytics"
+                description="Business intelligence dashboard that tracks sales, customer trends, and product performance for a simulated clothing e-commerce store."
+                image="/images/streetwear-icon.png"
+                techIcons={[
+                  { src: '/images/sql.webp', label: 'SQL' },
+                  { src: '/images/powerbi.webp', label: 'Power BI' },
+                  { src: '/images/aws.png', label: 'AWS' }
+                ]}
+              />
+            </Link>
+            <Link href="/projects/personal-finance">
+              <ProjectCard
+                title="Personal Finance"
+                description="Excel template designed to help you take control of your finances with clarity and insight."
+                image="/images/budget-icon.png"
+                techIcons={[
+                  { src: '/images/excel.jpg', label: 'Excel' }
+                ]}
+              />
+            </Link>
+            <Link href="/projects/bobcat">
+              <ProjectCard
+                title="BoBCAT"
+                description="Excel template designed to help you take control of your finances with clarity and insight."
+                image="/images/bobcat.jpg"
+                techIcons={[
+                  { src: '/images/excel.jpg', label: 'Excel' }
+                ]}
+              />
+            </Link>
           </div>
         </section>
       </main>
-    </>
+    </Layout>
   );
 }

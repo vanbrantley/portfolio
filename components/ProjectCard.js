@@ -1,28 +1,43 @@
-export default function ProjectCard({ title, description, image, techIcons, link }) {
+import Image from "next/image";
+
+export default function ProjectCard({ title, description, image, techIcons }) {
     return (
-        <div className="bg-white rounded-lg shadow-md p-4 transition-colors duration-300">
-            <img src={image} alt={title} className="w-full h-48 object-cover rounded mb-4" />
-            <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
-            <p className="mb-4 text-gray-700">{description}</p>
+        <div className="project-card bg-white rounded-lg shadow-md p-4 transition-colors duration-300 flex flex-col h-full">
+            <Image
+                src={image}
+                alt={title}
+                width={800}
+                height={450}
+                className="
+                    w-full
+                    h-36 sm:h-44 md:h-48 lg:h-56
+                    object-cover lg:object-contain
+                    object-center
+                    rounded
+                    mb-4
+                "
+            />
+
+            <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                {title}
+            </h3>
+
+            <p className="mb-4 text-gray-700 flex-grow">
+                {description}
+            </p>
+
             <div className="flex gap-2 mb-4">
                 {techIcons.map((icon, idx) => (
-                    <img
+                    <Image
                         key={idx}
                         src={icon.src}
                         alt={icon.label}
                         title={icon.label}
-                        className="w-6 h-6"
+                        width={24}
+                        height={24}
                     />
                 ))}
             </div>
-            <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline hover:text-blue-800"
-            >
-                View Project
-            </a>
         </div>
     );
 }

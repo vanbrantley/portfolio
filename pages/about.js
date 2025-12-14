@@ -1,3 +1,4 @@
+import Layout from '@/components/Layout';
 import Navbar from '@/components/Navbar';
 
 export default function About() {
@@ -8,8 +9,8 @@ export default function About() {
   };
 
   return (
-    <>
-      <Navbar />
+    <Layout>
+      {/* <Navbar /> */}
       <main className="p-6 max-w-2xl mx-auto bg-white rounded transition-colors duration-300">
         <h1 className="text-3xl font-bold mb-4 text-gray-900">About Me</h1>
         {/* <p className="mb-6 leading-relaxed">
@@ -67,6 +68,6 @@ export default function About() {
         </div>
 
       </main>
-    </>
+    </Layout>
   );
 }
