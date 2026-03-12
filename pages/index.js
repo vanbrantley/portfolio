@@ -34,14 +34,14 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2 items-stretch">
             <Link href="/projects/nhl-draft-analysis">
               <ProjectCard
-                title="NHL Draft Analysis"
-                description="Business intelligence dashboard that tracks sales, customer trends, and product performance for a simulated clothing e-commerce store."
+                title="NHL Draft Efficiency Analysis"
+                description="Evaluating NHL team draft performance from 2005-2017"
                 image="/images/nhl-draft-analysis-icon.png"
                 techIcons={[
-                  { src: '/images/python.webp', label: 'Python' },
-                  { src: '/images/sqlite.png', label: 'SQLite' },
-                  { src: '/images/tableau.webp', label: 'Tableau' },
-                  { src: '/images/colab.webp', label: 'Google Colab' },
+                  { src: '/images/tool-icons/python.webp', label: 'Python' },
+                  { src: '/images/tool-icons/sqlite.png', label: 'SQLite' },
+                  { src: '/images/tool-icons/tableau.webp', label: 'Tableau' },
+                  { src: '/images/tool-icons/colab.webp', label: 'Google Colab' },
                 ]}
               />
             </Link>
@@ -51,11 +51,11 @@ export default function Home() {
                 description="Business intelligence dashboard that tracks sales, customer trends, and product performance for a simulated clothing e-commerce store."
                 image="/images/streetwear-icon.png"
                 techIcons={[
-                  { src: '/images/aws.png', label: 'AWS' },
-                  { src: '/images/python.webp', label: 'Python' },
-                  { src: '/images/postgresql.png', label: 'PostreSQL' },
-                  { src: '/images/ga4.jpg', label: 'Google Analytics 4' },
-                  { src: '/images/shopify.webp', label: 'Shopify' },
+                  { src: '/images/tool-icons/aws.png', label: 'AWS' },
+                  { src: '/images/tool-icons/python.webp', label: 'Python' },
+                  { src: '/images/tool-icons/postgresql.png', label: 'PostreSQL' },
+                  { src: '/images/tool-icons/ga4.jpg', label: 'Google Analytics 4' },
+                  { src: '/images/tool-icons/shopify.webp', label: 'Shopify' },
                 ]}
               />
             </Link> */}
@@ -65,10 +65,10 @@ export default function Home() {
                 description="Excel template designed to help you take control of your finances with clarity and insight."
                 image="/images/budget-icon.png"
                 techIcons={[
-                  { src: '/images/sheets.png', label: 'Google Sheets' },
-                  { src: '/images/bigquery.png', label: 'Google BigQuery' },
-                  { src: '/images/colab.webp', label: 'Google Colab' },
-                  { src: '/images/python.webp', label: 'Python' },
+                  { src: '/images/tool-icons/sheets.png', label: 'Google Sheets' },
+                  { src: '/images/tool-icons/bigquery.png', label: 'Google BigQuery' },
+                  { src: '/images/tool-icons/colab.webp', label: 'Google Colab' },
+                  { src: '/images/tool-icons/python.webp', label: 'Python' },
                 ]}
               />
             </Link> */}
@@ -78,10 +78,10 @@ export default function Home() {
                 description="Excel template designed to help you take control of your finances with clarity and insight."
                 image="/images/bobcat.jpg"
                 techIcons={[
-                  { src: '/images/drive.png', label: 'Google Drive' },
-                  { src: '/images/forms.webp', label: 'Google Forms' },
-                  { src: '/images/sheets.png', label: 'Google Sheets' },
-                  { src: '/images/looker.png', label: 'Looker Studio' },
+                  { src: '/images/tool-icons/drive.png', label: 'Google Drive' },
+                  { src: '/images/tool-icons/forms.webp', label: 'Google Forms' },
+                  { src: '/images/tool-icons/sheets.png', label: 'Google Sheets' },
+                  { src: '/images/tool-icons/looker.png', label: 'Looker Studio' },
                 ]}
               />
             </Link> */}
