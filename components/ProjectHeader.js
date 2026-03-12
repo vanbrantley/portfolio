@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ProjectHeader({ title, subtitle, image }) {
     return (
-        <header className="w-full bg-gray-50 rounded-lg mb-8 p-6 text-center">
+        <header className="w-full rounded-lg mb-8 p-6 text-center">
             <div className="w-full max-w-3xl mx-auto aspect-video sm:h-40 md:h-48 lg:h-56 mb-6 relative bg-white rounded flex items-center justify-center">
                 <Image
                     src={image}

@@ -32,7 +32,20 @@ export default function Home() {
         <section id="projects" className="py-16">
           <h2 className="text-2xl font-bold mb-8 text-center text-gray-900">Projects</h2>
           <div className="grid gap-6 md:grid-cols-2 items-stretch">
-            <Link href="/projects/clothing-brand">
+            <Link href="/projects/nhl-draft-analysis">
+              <ProjectCard
+                title="NHL Draft Analysis"
+                description="Business intelligence dashboard that tracks sales, customer trends, and product performance for a simulated clothing e-commerce store."
+                image="/images/nhl-draft-analysis-icon.png"
+                techIcons={[
+                  { src: '/images/python.webp', label: 'Python' },
+                  { src: '/images/sqlite.png', label: 'SQLite' },
+                  { src: '/images/tableau.webp', label: 'Tableau' },
+                  { src: '/images/colab.webp', label: 'Google Colab' },
+                ]}
+              />
+            </Link>
+            {/* <Link href="/projects/clothing-brand">
               <ProjectCard
                 title="Streetwear Analytics"
                 description="Business intelligence dashboard that tracks sales, customer trends, and product performance for a simulated clothing e-commerce store."
@@ -45,8 +58,8 @@ export default function Home() {
                   { src: '/images/shopify.webp', label: 'Shopify' },
                 ]}
               />
-            </Link>
-            <Link href="/projects/personal-finance">
+            </Link> */}
+            {/* <Link href="/projects/personal-finance">
               <ProjectCard
                 title="Personal Finance"
                 description="Excel template designed to help you take control of your finances with clarity and insight."
@@ -58,8 +71,8 @@ export default function Home() {
                   { src: '/images/python.webp', label: 'Python' },
                 ]}
               />
-            </Link>
-            <Link href="/projects/bobcat">
+            </Link> */}
+            {/* <Link href="/projects/bobcat">
               <ProjectCard
                 title="BoBCAT"
                 description="Excel template designed to help you take control of your finances with clarity and insight."
@@ -71,7 +84,7 @@ export default function Home() {
                   { src: '/images/looker.png', label: 'Looker Studio' },
                 ]}
               />
-            </Link>
+            </Link> */}
           </div>
         </section>
       </main>
