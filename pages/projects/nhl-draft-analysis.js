@@ -128,7 +128,80 @@ export default function NHLDraftAnalysis() {
                     </ProjectSection>
 
                     <ProjectSection title="4. Draft Success Evaluation Methodology">
-                        <p>Explanation of the approach used to evaluate team draft performance.</p>
+                        <p><strong>4.1. The Core Idea</strong></p>
+                        <p>Not all drafts are created equal. Some years produce generational talent
+                            across the board, while others are historically shallow. Comparing raw
+                            outcomes across drafts would reward teams that happened to draft in
+                            talent rich years rather than teams that genuinely evaluated players well.
+                        </p>
+                        <p>
+                            Instead, this project treats each draft as its own isolated universe.
+                            The question is not &quot;how good were the players this team drafted?&quot; but
+                            &quot;how well did this team identify the best available players given what
+                            was in front of them?&quot; Each draft is re-ordered in hindsight based on
+                            actual NHL career performance, and each team&apos;s selections are compared
+                            against that hindsight order using a plus/minus score:
+                        </p>
+                        <p><strong>plus/minus = actual pick number - hindsight rank</strong></p>
+                        <p>A positive score means the team got more value than expected at that pick.
+                            A negative score means they got less. Summing these scores across all picks
+                            and all drafts gives us a single number per team that captures their overall
+                            drafting effectiveness.</p>
+
+                        <p><strong>4.2. Why Not Other Approaches</strong></p>
+                        <p>Several alternatives were considered and ruled out:</p>
+                        <ul>
+                            <li>Raw points totals favor teams that drafted in talent rich years rather than teams that drafted well.</li>
+                            <li>Games played alone doesn&apos;t distinguish a franchise cornerstone from a journeyman.</li>
+                            <li>Advanced stats like WAR or win shares would be ideal for measuring true player impact, but are not available in this dataset.</li>
+                        </ul>
+                        <p>The hindsight ranking approach addresses each of these limitations while working within the data we have.</p>
+
+                        <p><strong>4.3. The Formula</strong></p>
+                        <p>The performance metric used to build the hindsight ranking is a weighted
+                            combination of career points and games played. Points capture a player&apos;s
+                            overall quality and impact, while games played ensures that defensive
+                            players and reliable depth contributors are not undervalued by a points
+                            only metric.
+                        </p>
+                        <p>
+                            The formula used is:
+                        </p>
+                        <p><strong>Performance Score = games_played + (points * 2.29)</strong></p>
+                        <p>
+                            The coefficient 2.29 was derived directly from the data as the natural
+                            equal-weight point — the value at which games played and points contribute
+                            equally to the performance score on average. Before committing to this
+                            value two checks were run:
+                        </p>
+                        <ul>
+                            <ol>Positional fairness — at X=2.29 forwards are over-represented by 4.0
+                                percentage points in the hindsight top 30 relative to actual draft
+                                selections, equating to roughly one extra forward per draft class.
+                                This was deemed acceptable.</ol>
+                            <ol>Sensitivity — moving one full unit in either direction from X=2.29
+                                produces an average rank difference of less than one spot across
+                                benchmark drafts, confirming the methodology is robust regardless
+                                of the exact coefficient chosen.</ol>
+                        </ul>
+                        <p>Goalies are excluded from the hindsight ranking. Because goalies
+                            accumulate minimal points regardless of their quality, including them
+                            would systematically penalize teams that invested early picks in goalies
+                            even when those were correct decisions. Goalie picks are not counted
+                            toward a team&apos;s score — acknowledged as a limitation but fairer than
+                            the alternative.
+                        </p>
+                        <p>The full coefficient investigation is documented in{" "}
+                            <a
+                                href="https://github.com/vanbrantley/nhl-draft-analysis/blob/main/notebooks/formula.ipynb"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-500 hover:text-blue-700 visited:text-blue-800"
+                            >
+                                formula.ipynb
+                            </a>
+                            .
+                        </p>
                     </ProjectSection>
 
                     <ProjectSection title="5. Tableau Visualizations">
@@ -136,6 +209,7 @@ export default function NHLDraftAnalysis() {
                     </ProjectSection>
 
                     <ProjectSection title="6. Discussion and Conclusions">
+                        <p>List known limitations.</p>
                         <p>Key findings and insights from the analysis.</p>
                     </ProjectSection>
 
