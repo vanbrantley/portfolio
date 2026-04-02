@@ -19,9 +19,19 @@ export default function NHLDraftAnalysis() {
                     <ProjectSection title="1. Project Introduction">
                         <p>The goal of this project is to evaluate the drafting effectiveness of NHL teams.</p>
                         <p>Specifically, it aims to answer the question:</p>
-                        <p><strong>Which NHL teams draft the most efficiently?</strong></p>
+                        <p><strong>Which NHL teams draft the most effectively?</strong></p>
                         <p>This analysis examines drafts from 2005 through 2017, a period that captures the modern salary cap era while also allowing sufficient time for drafted players to develop and establish their NHL careers.</p>
                         <p>As a fan of the New York Rangers, a team that has often struggled to generate strong value from early draft selections, I became interested in whether team drafting performance could be quantified and compared across the league. This project explores that idea by measuring draft outcomes relative to draft position.</p>
+                    </ProjectSection>
+
+                    <ProjectSection title="How It Works (Quick Summary)">
+                        <ul>
+                            <li>Each player is assigned a <strong>Performance Score</strong> based on career games played and points</li>
+                            <li>Each draft pick has an <strong>expected value</strong> based on historical averages at that pick</li>
+                            <li>Each selection is evaluated as: <strong>Draft Value = Actual Performance − Expected Performance</strong></li>
+                            <li>Team scores are calculated by summing draft value across all picks</li>
+                        </ul>
+                        <p>This framework allows teams to be evaluated not by raw outcomes, but by how effectively they extract value from their draft positions.</p>
                     </ProjectSection>
 
                     <ProjectSection title="2. Data Overview">
@@ -129,68 +139,73 @@ export default function NHLDraftAnalysis() {
 
                     <ProjectSection title="4. Draft Success Evaluation Methodology">
                         <p><strong>4.1. The Core Idea</strong></p>
-                        <p>Not all drafts are created equal. Some years produce generational talent
-                            across the board, while others are historically shallow. Comparing raw
-                            outcomes across drafts would reward teams that happened to draft in
-                            talent rich years rather than teams that genuinely evaluated players well.
+                        <p>The goal of this analysis is to measure how effectively NHL teams draft relative to the value of the picks they are given.</p>
+                        <p>
+                            Not all draft positions carry the same expectations. A 1st overall pick is expected to produce significantly more value
+                            than a late-round selection. Because of this, teams should not be evaluated based on raw outcomes alone, but on how their
+                            selections perform relative to what is typical for each pick.
                         </p>
                         <p>
-                            Instead, this project treats each draft as its own isolated universe.
-                            The question is not &quot;how good were the players this team drafted?&quot; but
-                            &quot;how well did this team identify the best available players given what
-                            was in front of them?&quot; Each draft is re-ordered in hindsight based on
-                            actual NHL career performance, and each team&apos;s selections are compared
-                            against that hindsight order using a plus/minus score:
+                            This project evaluates drafting by comparing each player’s actual NHL
+                            career performance to the historical expectation of their draft slot.
                         </p>
-                        <p><strong>plus/minus = actual pick number - hindsight rank</strong></p>
-                        <p>A positive score means the team got more value than expected at that pick.
-                            A negative score means they got less. Summing these scores across all picks
-                            and all drafts gives us a single number per team that captures their overall
-                            drafting effectiveness.</p>
 
-                        <p><strong>4.2. Why Not Other Approaches</strong></p>
-                        <p>Several alternatives were considered and ruled out:</p>
+                        <p><strong>4.2. Defining Expected Value</strong></p>
+                        <p>To establish a fair baseline, we calculate the expected value of every draft pick.</p>
+                        <p>
+                            For each pick number (e.g., 1st overall, 50th overall), we compute the average career
+                            performance of all players selected at that position across the 2005–2017 drafts.
+                        </p>
+                        <p>This creates a stable expectation curve:</p>
                         <ul>
-                            <li>Raw points totals favor teams that drafted in talent rich years rather than teams that drafted well.</li>
-                            <li>Games played alone doesn&apos;t distinguish a franchise cornerstone from a journeyman.</li>
-                            <li>Advanced stats like WAR or win shares would be ideal for measuring true player impact, but are not available in this dataset.</li>
+                            <li>Early picks have high expected value</li>
+                            <li>Mid-round picks have moderate expected value</li>
+                            <li>Late-round picks have low expected value</li>
                         </ul>
-                        <p>The hindsight ranking approach addresses each of these limitations while working within the data we have.</p>
+                        <p>This approach allows all draft selections to be evaluated on a consistent scale across years.</p>
 
-                        <p><strong>4.3. The Formula</strong></p>
-                        <p>The performance metric used to build the hindsight ranking is a weighted
-                            combination of career points and games played. Points capture a player&apos;s
-                            overall quality and impact, while games played ensures that defensive
-                            players and reliable depth contributors are not undervalued by a points
-                            only metric.
-                        </p>
-                        <p>
-                            The formula used is:
-                        </p>
-                        <p><strong>Performance Score = games_played + (points * 2.29)</strong></p>
-                        <p>
-                            The coefficient 2.29 was derived directly from the data as the natural
-                            equal-weight point — the value at which games played and points contribute
-                            equally to the performance score on average. Before committing to this
-                            value two checks were run:
-                        </p>
+                        <p><strong>4.3. Measuring Draft Value</strong></p>
+                        <p>Each draft selection is evaluated using the following metric:</p>
+                        <p><strong>Draft Value = Player Performance Score − Expected Performance at That Pick</strong></p>
                         <ul>
-                            <ol>Positional fairness — at X=2.29 forwards are over-represented by 4.0
-                                percentage points in the hindsight top 30 relative to actual draft
-                                selections, equating to roughly one extra forward per draft class.
-                                This was deemed acceptable.</ol>
-                            <ol>Sensitivity — moving one full unit in either direction from X=2.29
-                                produces an average rank difference of less than one spot across
-                                benchmark drafts, confirming the methodology is robust regardless
-                                of the exact coefficient chosen.</ol>
+                            <li>A <strong>positive value</strong> indicates the team exceeded expectations</li>
+                            <li>A <strong>negative value</strong> indicates the team fell short of expectations</li>
                         </ul>
-                        <p>Goalies are excluded from the hindsight ranking. Because goalies
-                            accumulate minimal points regardless of their quality, including them
-                            would systematically penalize teams that invested early picks in goalies
-                            even when those were correct decisions. Goalie picks are not counted
-                            toward a team&apos;s score — acknowledged as a limitation but fairer than
-                            the alternative.
-                        </p>
+                        <p>By summing these values across all picks and all drafts, we obtain a single score for each team:</p>
+                        <ul>
+                            <li>Positive total → strong drafting performance</li>
+                            <li>Negative total → weaker drafting performance</li>
+                        </ul>
+                        <p>This framework captures both the magnitude and consistency of a team’s drafting outcomes.</p>
+
+                        <p><strong>4.4. The Performance Score</strong></p>
+                        <p>To evaluate players, we first need a single metric that captures NHL career value.</p>
+                        <p>The dataset provides two key statistics:</p>
+                        <ul>
+                            <li>Career games played</li>
+                            <li>Career points (the sum of career goals and career assists)</li>
+                        </ul>
+                        <p>Each captures a different dimension of performance:</p>
+                        <ul>
+                            <li>Games played reflects longevity and reliability</li>
+                            <li>Points reflect production and impact</li>
+                        </ul>
+                        <p>To balance these, we define:</p>
+                        <p><strong>Performance Score = games_played + (points × 2.29)</strong></p>
+                        <p>The coefficient 2.29 is derived directly from the data as the value at which games played and points contribute equally on average:</p>
+                        <ul>
+                            <li>avg_games_played = avg_points × X</li>
+                            <li><strong>X = avg_games_played / avg_points</strong></li>
+                        </ul>
+                        <p>This ensures that neither component disproportionately drives the metric.</p>
+                        <p><strong>Validation</strong></p>
+                        <p>Two checks were performed before finalizing the coefficient:</p>
+                        <ul>
+                            <li><strong>Positional fairness</strong>: At X = 2.29, forwards are overrepresented in the top 30 by ~4 percentage
+                                points (≈1 player per draft), which was considered acceptable
+                            </li>
+                            <li><strong>Sensitivity analysis</strong>: Adjusting X by ±1 results in minimal ranking changes, confirming the metric is stable</li>
+                        </ul>
                         <p>The full coefficient investigation is documented in{" "}
                             <a
                                 href="https://github.com/vanbrantley/nhl-draft-analysis/blob/main/notebooks/formula.ipynb"
@@ -202,6 +217,20 @@ export default function NHLDraftAnalysis() {
                             </a>
                             .
                         </p>
+
+                        <p><strong>4.5. Limitations</strong></p>
+                        <p>Goalies are excluded from this analysis.</p>
+                        <p>
+                            Because goalies accumulate very few points regardless of their actual impact, including
+                            them would systematically undervalue their performance and unfairly penalize teams that
+                            drafted them early.
+                        </p>
+                        <p>
+                            As a result, goalie selections are omitted from both the expected value calculations and
+                            team scores. This is acknowledged as a limitation, but provides a more consistent
+                            evaluation across skater positions.
+                        </p>
+
                     </ProjectSection>
 
                     <ProjectSection title="5. Tableau Visualizations">
