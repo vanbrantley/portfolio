@@ -1,11 +1,10 @@
 import Head from 'next/head';
 import Link from "next/link";
-import Layout from '@/components/Layout';
 import ProjectCard from '@/components/ProjectCard';
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Van Brantley | Data Analyst</title>
       </Head>
@@ -88,6 +87,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </Layout>
+    </>
   );
 }
