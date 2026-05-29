@@ -26,7 +26,7 @@ export default function About() {
           </a> */}
 
         <a
-          href="https://github.com/vbplot2"
+          href="https://github.com/vanbrantley"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-blue-600 underline cursor-pointer"
