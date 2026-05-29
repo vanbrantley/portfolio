@@ -11,8 +11,11 @@ export default function Home() {
       <main className="p-6">
         <section className="h-screen flex flex-col items-center justify-center text-center bg-white transition-colors duration-300">
           <h1 className="text-4xl font-bold mb-4 text-gray-900">Van Brantley</h1>
-          <p className="text-lg mb-6 text-gray-700">
+          {/* <p className="text-lg mb-6 text-gray-700">
             Turning data into insight through analysis and storytelling
+          </p> */}
+          <p className="text-lg mb-6 text-gray-700">
+            Building automated pipelines and turning complex datasets into clear data stories
           </p>
           <a href="#projects" className="animate-bounce mt-6">
             <svg
@@ -31,6 +34,22 @@ export default function Home() {
         <section id="projects" className="py-16">
           <h2 className="text-2xl font-bold mb-8 text-center text-gray-900">Projects</h2>
           <div className="grid gap-6 md:grid-cols-2 items-stretch">
+
+            <Link href="/projects/nyc-data">
+              <ProjectCard
+                title="NYC Data Job Market Pulse [In Progress]"
+                description="Data pipeline to investigate the entry-level data job market in NYC"
+                image="/images/nyc-data.jpg"
+                techIcons={[
+                  { src: '/images/tool-icons/python.webp', label: 'Python' },
+                  { src: '/images/tool-icons/snowflake.png', label: 'Snowflake' },
+                  { src: '/images/tool-icons/dbt.png', label: 'dbt' },
+                  { src: '/images/tool-icons/github-actions.png', label: 'GitHub Actions' },
+                  { src: '/images/tool-icons/tableau.webp', label: 'Tableau' },
+                ]}
+              />
+            </Link>
+
             <Link href="/projects/nhl-draft-analysis">
               <ProjectCard
                 title="NHL Draft Efficiency Analysis"
@@ -38,12 +57,13 @@ export default function Home() {
                 image="/images/nhl-draft-analysis-icon.png"
                 techIcons={[
                   { src: '/images/tool-icons/python.webp', label: 'Python' },
+                  { src: '/images/tool-icons/jupyter.png', label: 'Jupyter Notebook' },
                   { src: '/images/tool-icons/sqlite.png', label: 'SQLite' },
                   { src: '/images/tool-icons/tableau.webp', label: 'Tableau' },
-                  { src: '/images/tool-icons/colab.webp', label: 'Google Colab' },
                 ]}
               />
             </Link>
+
             {/* <Link href="/projects/clothing-brand">
               <ProjectCard
                 title="Streetwear Analytics"
