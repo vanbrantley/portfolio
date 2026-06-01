@@ -12,9 +12,9 @@ export default function Architecture() {
 
             {/* <p>Here is how the components interact: <strong>INSERT DIAGRAM</strong></p> */}
 
-            <p>*The architectural diagram for this pipeline is currently being finalized
+            <p>The architectural diagram for this pipeline is currently being finalized
                 to reflect the latest staging transformations. In the meantime, here
-                is how the data flows through the ecosystem:*
+                is how the data flows through the ecosystem:
             </p>
 
             <p>The <strong>NYC Data Job Market Tracker</strong> operates on a modular ELT (Extract,

@@ -18,7 +18,7 @@ export default function NYCJobMarketPulse() {
             <MobileNav />
 
             {/* Main content */}
-            <main className="w-full lg:pl-64  space-y-10 pb-40">
+            <main className="w-full lg:pl-64 space-y-10 pb-40">
 
                 {/* HERO */}
                 <section id="hero" className="scroll-mt-6 px-6">

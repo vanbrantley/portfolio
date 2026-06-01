@@ -10,7 +10,7 @@ export default function Hero() {
                 subtitle="Data pipeline to investigate the entry-level data job market in NYC"
                 image="/images/nyc-data.jpg"
             />
-            {/* <div className="w-full flex justify-center">
+            <div className="w-full flex justify-center">
                 <Link
                     href="https://github.com/vanbrantley/nyc-data-job-market-tracker"
                     target="_blank"
@@ -26,7 +26,7 @@ export default function Hero() {
                     />
                     <span className="text-white">View Project Code</span>
                 </Link>
-            </div> */}
+            </div>
         </div>
     );
 }
