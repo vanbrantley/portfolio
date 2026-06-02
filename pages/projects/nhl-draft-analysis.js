@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Hero from "@/components/nhl/Hero";
 import DashboardPreview from "@/components/nhl/DashboardPreview";
 import Overview from "@/components/nhl/Overview";
@@ -5,58 +6,67 @@ import KeyFindings from "@/components/nhl/KeyFindings";
 import TeamClusters from "@/components/nhl/TeamClusters";
 import Methodology from "@/components/nhl/Methodology";
 import Conclusion from "@/components/nhl/Conclusion";
-
 import StickySidebarNav from "@/components/nhl/StickySidebarNav";
 import MobileNav from "@/components/nhl/MobileNav";
 
 export default function NHLDraftAnalysis() {
     return (
-        <div className="relative flex">
-            {/* Desktop navigation */}
-            <StickySidebarNav />
 
-            {/* Mobile navigation */}
-            <MobileNav />
+        <>
 
-            {/* Main content */}
-            <main className="w-full lg:pl-64 space-y-10 pb-40">
+            <Head>
+                <title>NHL Draft Efficiency Analysis | Van Brantley</title>
+            </Head>
 
-                {/* HERO */}
-                <section id="hero" className="scroll-mt-6 px-6">
-                    <Hero />
-                </section>
+            <div className="relative flex">
+                {/* Desktop navigation */}
+                <StickySidebarNav />
 
-                {/* DASHBOARD */}
-                <section id="dashboard" className="scroll-mt-24 px-6">
-                    <DashboardPreview />
-                </section>
+                {/* Mobile navigation */}
+                <MobileNav />
 
-                {/* OVERVIEW */}
-                <section id="overview" className="scroll-mt-24 px-6">
-                    <Overview />
-                </section>
+                {/* Main content */}
+                <main className="w-full lg:pl-64 space-y-10 pb-40">
 
-                {/* METHODOLOGY */}
-                <section id="methodology" className="scroll-mt-24 px-6">
-                    <Methodology />
-                </section>
+                    {/* HERO */}
+                    <section id="hero" className="scroll-mt-6 px-6">
+                        <Hero />
+                    </section>
 
-                {/* TEAM CLUSTERS */}
-                <section id="teams" className="scroll-mt-24 px-6">
-                    <TeamClusters />
-                </section>
+                    {/* DASHBOARD */}
+                    <section id="dashboard" className="scroll-mt-24 px-6">
+                        <DashboardPreview />
+                    </section>
 
-                {/* KEY FINDINGS */}
-                <section id="key-findings" className="scroll-mt-24 px-6">
-                    <KeyFindings />
-                </section>
+                    {/* OVERVIEW */}
+                    <section id="overview" className="scroll-mt-24 px-6">
+                        <Overview />
+                    </section>
 
-                {/* CONCLUSION */}
-                <section id="conclusion" className="scroll-mt-24 px-6">
-                    <Conclusion />
-                </section>
+                    {/* METHODOLOGY */}
+                    <section id="methodology" className="scroll-mt-24 px-6">
+                        <Methodology />
+                    </section>
 
-            </main>
-        </div>
+                    {/* TEAM CLUSTERS */}
+                    <section id="teams" className="scroll-mt-24 px-6">
+                        <TeamClusters />
+                    </section>
+
+                    {/* KEY FINDINGS */}
+                    <section id="key-findings" className="scroll-mt-24 px-6">
+                        <KeyFindings />
+                    </section>
+
+                    {/* CONCLUSION */}
+                    <section id="conclusion" className="scroll-mt-24 px-6">
+                        <Conclusion />
+                    </section>
+
+                </main>
+            </div>
+
+        </>
+
     );
 }
