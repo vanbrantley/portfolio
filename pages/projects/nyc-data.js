@@ -4,8 +4,8 @@ import StickySidebarNav from "@/components/nyc-data/StickySidebarNav";
 import MobileNav from "@/components/nyc-data/MobileNav";
 import Overview from "@/components/nyc-data/Overview";
 import Architecture from "@/components/nyc-data/Architecture";
-import Ingestion from "@/components/nyc-data/Ingestion";
-import NextSteps from "@/components/nyc-data/NextSteps";
+import Findings from '@/components/nyc-data/Findings';
+import EngineeringDecisions from '@/components/nyc-data/EngineeringDecisions';
 
 export default function NYCJobMarketPulse() {
     return (
@@ -37,21 +37,20 @@ export default function NYCJobMarketPulse() {
                         <Overview />
                     </section>
 
+                    {/* FINDINGS */}
+                    <section id="findings" className="scroll-mt-24 px-6">
+                        <Findings />
+                    </section>
+
                     {/* ARCHITECTURE */}
                     <section id="architecture" className="scroll-mt-24 px-6">
                         <Architecture />
                     </section>
 
-                    {/* INGESTION */}
-                    <section id="ingestion" className="scroll-mt-24 px-6">
-                        <Ingestion />
+                    {/* ENGINEERING DECISIONS */}
+                    <section id="engineering-decisions" className="scroll-mt-24 px-6">
+                        <EngineeringDecisions />
                     </section>
-
-                    {/* NEXT STEPS */}
-                    <section id="next-steps" className="scroll-mt-24 px-6">
-                        <NextSteps />
-                    </section>
-
 
                 </main>
             </div>

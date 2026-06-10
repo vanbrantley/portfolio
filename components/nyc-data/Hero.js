@@ -6,16 +6,32 @@ export default function Hero() {
     return (
         <div className="py-6 px-6">
             <ProjectHeader
-                title="NYC Data Job Market Pulse [In Progress]"
-                subtitle="Data pipeline to investigate the entry-level data job market in NYC"
+                title="NYC Data Job Market Pulse"
+                subtitle="Data pipeline to investigate the early-career data job market in NYC"
                 image="/images/nyc-data.jpg"
             />
-            <div className="w-full flex justify-center">
+            <div className="w-full flex flex-col sm:flex-row justify-center items-center gap-3">
+
+                <Link
+                    href="https://nyc-data-job-market-tracker.streamlit.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center w-54 justify-center gap-3 bg-black hover:bg-neutral-800 text-white font-medium px-6 py-3 rounded-lg border border-neutral-800 transition-colors duration-200 shadow-sm"
+                >
+                    <Image
+                        src="/images/tool-icons/streamlit.png"
+                        alt="Streamlit Logo"
+                        width={20}
+                        height={20}
+                    />
+                    <span className="text-white">View Dashboard</span>
+                </Link>
+
                 <Link
                     href="https://github.com/vanbrantley/nyc-data-job-market-tracker"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-black hover:bg-neutral-800 text-white font-medium px-6 py-3 rounded-lg border border-neutral-800 transition-colors duration-200 shadow-sm"
+                    className="inline-flex items-center w-54 justify-center gap-3 bg-black hover:bg-neutral-800 text-white font-medium px-6 py-3 rounded-lg border border-neutral-800 transition-colors duration-200 shadow-sm"
                 >
                     <Image
                         src="/images/github.svg"
@@ -26,6 +42,7 @@ export default function Hero() {
                     />
                     <span className="text-white">View Project Code</span>
                 </Link>
+
             </div>
         </div>
     );

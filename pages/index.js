@@ -37,7 +37,7 @@ export default function Home() {
 
             <Link href="/projects/nyc-data">
               <ProjectCard
-                title="NYC Data Job Market Pulse [In Progress]"
+                title="NYC Data Job Market Pulse"
                 description="Data pipeline to investigate the entry-level data job market in NYC"
                 image="/images/nyc-data.jpg"
                 techIcons={[
@@ -45,7 +45,7 @@ export default function Home() {
                   { src: '/images/tool-icons/snowflake.png', label: 'Snowflake' },
                   { src: '/images/tool-icons/dbt.png', label: 'dbt' },
                   { src: '/images/tool-icons/github-actions.png', label: 'GitHub Actions' },
-                  { src: '/images/tool-icons/tableau.webp', label: 'Tableau' },
+                  { src: '/images/tool-icons/streamlit.png', label: 'Streamlit' },
                 ]}
               />
             </Link>

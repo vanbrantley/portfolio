@@ -64,7 +64,7 @@ export default function About() {
 
               {/* Why Data Section */}
               <div className="pt-1 space-y-3">
-                <h2 className="text-xl font-semibold text-neutral-900 tracking-tight">Why Data</h2>
+                <h2 className="text-xl font-semibold text-neutral-900 tracking-tight">Why Data?</h2>
                 <p>
                   When I discovered data engineering and analysis, everything clicked. It was
                   the exact landing zone I had been looking for.

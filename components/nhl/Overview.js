@@ -4,7 +4,7 @@ export default function Overview() {
             <h2 className="text-2xl font-semibold mb-4">Overview</h2>
 
             <p>
-                Every NHL front office aims to &quot;Draft for Value,&quot; but
+                Every NHL front office aims to &quot;Draft for Value&quot;, but
                 scouting success is notoriously difficult to quantify. Is a team
                 &quot;good&quot; at drafting because they hit on a 1st-round
                 superstar, or are they simply benefiting from their draft position?
